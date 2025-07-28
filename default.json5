@@ -9,6 +9,7 @@
 		":automergeBranch",
 		":pinDependencies", // I want to pin all deps, not just dev ones
 		"docker:enableMajor",
+		"github>jloh/renovate-config:autoMerge.json5",
 	],
 	timezone: "Australia/Hobart",
 	dependencyDashboardTitle: "🤖 Renovate Dashboard",
