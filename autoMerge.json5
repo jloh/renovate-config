@@ -1,0 +1,25 @@
+{
+	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+	packageRules: [
+		{
+			description: "Auto-merge initial digest pinning",
+			matchDatasources: ["docker", "github-tags"],
+			matchUpdateTypes: ["pinDigest"],
+			automerge: true,
+			ignoreTests: true,
+		},
+		{
+			description: "Auto-merge trusted GitHub Actions",
+			matchManagers: ["github-actions"],
+			matchPackageNames: [
+				"/^actions\//",
+				"/^renovatebot\//",
+			],
+			automerge: true,
+			automergeType: "branch",
+			matchUpdateTypes: ["minor", "patch", "digest"],
+			minimumReleaseAge: "1 minute",
+			ignoreTests: true,
+		},
+	}
+}
