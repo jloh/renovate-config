@@ -4,6 +4,7 @@
 	"extends": [
 		"github>jloh/renovate-config:default.json5",
 		":automergePatch",          // Automatically merge patch updates only
+		"npm:unpublishSafe",        // Wait 3 days before updating
 		":maintainLockFilesWeekly",
 	]
 }
