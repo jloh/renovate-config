@@ -6,5 +6,18 @@
 		":automergePatch",          // Automatically merge patch updates only
 		"npm:unpublishSafe",        // Wait 3 days before updating
 		":maintainLockFilesWeekly",
-	]
+	],
+	"packageRules": [
+		{
+			description: "Auto-merge dev/formatting tools",
+			matchManagers: ["npm"],
+			matchPackageNames: [
+				"prettier",
+			],
+			automerge: true,
+			automergeType: "branch",
+			matchUpdateTypes: ["minor", "patch"],
+			minimumReleaseAge: "3 days",
+		},
+	],
 }
