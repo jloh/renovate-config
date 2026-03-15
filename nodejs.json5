@@ -1,19 +1,17 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"description": "Default config for NodeJS projects",
-	"extends": [
+	$schema: "https://docs.renovatebot.com/renovate-schema.json",
+	description: "Default config for NodeJS projects",
+	extends: [
 		"github>jloh/renovate-config:default.json5",
-		":automergePatch",          // Automatically merge patch updates only
-		"npm:unpublishSafe",        // Wait 3 days before updating
+		":automergePatch", // Automatically merge patch updates only
+		"npm:unpublishSafe", // Wait 3 days before updating
 		":maintainLockFilesWeekly",
 	],
-	"packageRules": [
+	packageRules: [
 		{
 			description: "Auto-merge dev/formatting tools",
 			matchManagers: ["npm"],
-			matchPackageNames: [
-				"prettier",
-			],
+			matchPackageNames: ["prettier"],
 			automerge: true,
 			automergeType: "branch",
 			matchUpdateTypes: ["minor", "patch"],

@@ -11,15 +11,18 @@
 		{
 			description: "Auto-merge trusted GitHub Actions",
 			matchManagers: ["github-actions"],
-			matchPackageNames: [
-				"/^actions\//",
-				"/^renovatebot\//",
-			],
+			matchPackageNames: ["/^actions\//", "/^renovatebot\//"],
 			automerge: true,
 			automergeType: "branch",
 			matchUpdateTypes: ["minor", "patch", "digest"],
 			minimumReleaseAge: "1 minute",
 			ignoreTests: true,
+		},
+		{
+			description: "Auto-merge lockfile maintenance",
+			matchUpdateTypes: ["lockFileMaintenance"],
+			automerge: true,
+			automergeType: "branch",
 		},
 	],
 }
