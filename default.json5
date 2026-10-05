@@ -14,10 +14,10 @@
 	timezone: "Australia/Hobart",
 	dependencyDashboardTitle: "🤖 Renovate Dashboard",
 	suppressNotifications: ["prIgnoreNotification"],
-  packageRules:
+  packageRules: [
     {
       "description": "Renovate still defaults to search.devbox.sh, whose index stopped at 2026-08-27 (jetify-com/devbox#2965)",
       "matchDatasources": ["devbox"],
       "registryUrls": ["https://www.nixsearch.com/v2/"]
-    }
+    }]
 }
